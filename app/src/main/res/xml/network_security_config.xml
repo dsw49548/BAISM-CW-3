@@ -5,9 +5,16 @@
             <certificates src="system" />
         </trust-anchors>
     </base-config>
+    <domain-config>
+        <domain includeSubdomains="true">rickandmortyapi.com</domain>
+        <pin-set expiration="2027-12-31">
+            <pin digest="SHA-256">4HQtdsbE14lqcEw5YHG4JVx5rHWfpCmS09cZ0yfVd4U=</pin>
+            <pin digest="SHA-256">kIdp6NNEd8wsugYyyIYFsi1ylMCED3hZbSR8ZFsa/A4=</pin>
+        </pin-set>
+    </domain-config>
     <debug-overrides>
         <trust-anchors>
-            <certificates src="user" />
+            <certificates src="user" overridePins="false" />
         </trust-anchors>
     </debug-overrides>
 </network-security-config>
